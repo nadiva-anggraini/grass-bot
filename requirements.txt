@@ -6,3 +6,5 @@ websockets_proxy
 pystyle
 numpy==1.21.0
 colorama
+pytz
+termcolor
