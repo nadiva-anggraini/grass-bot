@@ -5,6 +5,7 @@ const request = require('axios');
 const { v4: generateUUID } = require('uuid');
 const { SocksProxyAgent } = require('socks-proxy-agent');
 const { HttpsProxyAgent } = require('https-proxy-agent');
+const moment = require('moment-timezone');
 require('colors');
 
 console.error = function () {};
@@ -107,7 +108,8 @@ class BotInstance {
           console.log(`Trying to send authentication for userID: ${authResponse.result.user_id.yellow}`.white);
         } else if (message.action === 'PONG') {
           const totalDataUsageKB = (this.totalDataUsage[userID] / 1024).toFixed(2);
-          console.log(`Received PONG for UserID: ${userID.green}, Used ${totalDataUsageKB.yellow} KB total packet data`.cyan);
+		  const timezone = moment().tz('Asia/Jakarta').format('HH:mm:ss [WIB] DD-MM-YYYY');
+          console.log(`${timezone} Received PONG for UserID: ${userID.green}, Used ${totalDataUsageKB.yellow} KB total packet data`.cyan);
         }
       });
       wsClient.on('close', (code, reason) => {
@@ -126,6 +128,7 @@ class BotInstance {
 
   sendPing(wsClient, proxyIP) {
     setInterval(() => {
+      const timezone = moment().tz('Asia/Jakarta').format('HH:mm:ss [WIB] DD-MM-YYYY');
       const pingMsg = {
         id: generateUUID(),
         version: '1.0.0',
@@ -133,7 +136,7 @@ class BotInstance {
         data: {},
       };
       wsClient.send(JSON.stringify(pingMsg));
-      console.log(`Send PING from ${proxyIP}`.green);
+      console.log(`${timezone} Sent PING from ${proxyIP}`.green);
     }, 26000);
   }
 
