@@ -49,7 +49,7 @@ print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
 
 # Ask user for node type (extension or desktop)
 def get_node_type():
-    return node_type == 'desktop'
+    return get_node_type == 'desktop'
 
 node_type = get_node_type()
 print(f"🔵 You selected: {'extension' if node_type else 'desktop'}, ENJOY!\n")
