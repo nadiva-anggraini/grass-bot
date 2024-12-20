@@ -38,7 +38,7 @@ desktop_node_version = "4.30.0"
 
 # Read UID and Proxy count
 def read_uid_and_proxy():
-    with open('uid.txt', 'r') as file:
+    with open('userid.txt', 'r') as file:
         uid_count = sum(1 for line in file)
 
     with open('proxy.txt', 'r') as file:
@@ -315,7 +315,7 @@ async def connect_to_wss(protocol_proxy, user_id):
             continue
 
 async def main():
-    with open('uid.txt', 'r') as file:
+    with open('userid.txt', 'r') as file:
         user_ids = file.read().splitlines()
 
     with open('proxy.txt', 'r') as file:
