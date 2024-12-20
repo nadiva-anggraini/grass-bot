@@ -42,7 +42,6 @@ print()
 
 # Get User input for proxy failure handling
 def get_user_input():
-    user_input = ""
     return user_input == 'yes'
 
 remove_on_all_errors = get_user_input()
@@ -50,7 +49,6 @@ print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
 
 # Ask user for node type (extension or desktop)
 def get_node_type():
-    node_type = ""
     return node_type == 'desktop'
 
 node_type = get_node_type()
