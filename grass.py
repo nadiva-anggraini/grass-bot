@@ -46,14 +46,13 @@ def get_user_input():
     return False  # 'no' corresponds to False
 
 remove_on_all_errors = get_user_input()
-print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
 
 # Automatically return "desktop" for get_node_type
 def get_node_type():
     return "desktop"
 
 node_type = get_node_type()
-print(f"🔵 You selected: {node_type.capitalize()} node. ENJOY!\n")
+print(f"🔵 {node_type.capitalize()} node. ENJOY!\n")
 
 def truncate_userid(user_id):
     return f"{user_id[:4]}--{user_id[-4:]}"
