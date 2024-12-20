@@ -46,8 +46,7 @@ def get_user_input():
     while user_input not in ['yes', 'no']:
         user_input = input("🔵 Do you want to remove the proxy if there is a specific failure (yes/no)? ").strip().lower()
         if user_input not in ['yes', 'no']:
-            print("🔴 Invalid input. Please enter 'yes' or 'no'.")
-    return user_input == 'no'
+            return user_input == 'no'
 
 remove_on_all_errors = get_user_input()
 print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
@@ -58,8 +57,7 @@ def get_node_type():
     while node_type not in ['extension', 'desktop']:
         node_type = input("🔵 Choose node type (extension/desktop): ").strip().lower()
         if node_type not in ['extension', 'desktop']:
-            print("🔴 Invalid input. Please enter 'extension' or 'desktop'.")
-    return node_type == 'desktop'
+            return node_type == 'desktop'
 
 node_type = get_node_type()
 print(f"🔵 You selected: {node_type.capitalize()} node. ENJOY!\n")
