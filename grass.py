@@ -51,6 +51,10 @@ print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
 # Ask user for node type (extension or desktop)
 def get_node_type():
     node_type = ""
+    while node_type not in ['extension', 'desktop']:
+        node_type = input("🔵 Choose node type (extension/desktop): ").strip().lower()
+        if node_type not in ['extension', 'desktop']:
+            print("🔴 Invalid input. Please enter 'extension' or 'desktop'.")
     return node_type == 'desktop'
 
 node_type = get_node_type()
