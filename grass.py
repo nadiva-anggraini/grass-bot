@@ -42,7 +42,7 @@ print()
 
 # Get User input for proxy failure handling
 def get_user_input():
-    user_input = "")
+    user_input = ""
     return user_input == 'no'
 
 remove_on_all_errors = get_user_input()
