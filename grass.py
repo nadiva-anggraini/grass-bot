@@ -40,13 +40,6 @@ print(f"🌐 Loaded {proxy_count} proxies.")
 print(f"🌐 Active proxy loaded per-task: {ONETIME_PROXY} proxies.")
 print()
 
-# Get User input for proxy failure handling
-def get_user_input():
-    return get_user_input == 'no'
-
-remove_on_all_errors = get_user_input()
-print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
-
 # Ask user for node type (extension or desktop)
 def get_user_input():
     user_input = ""
