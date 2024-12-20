@@ -1,5 +1,3 @@
-# Copyright (C) 2024 officialputuid
-
 import asyncio
 import datetime
 import json
@@ -20,18 +18,6 @@ logger.add(
     ),
     colorize=True
 )
-
-# main.py
-def print_header():
-    cn = pyfiglet.figlet_format("xGrassNode")
-    print(cn)
-    print("🌱 Season 2")
-    print("🎨 by \033]8;;https://github.com/officialputuid\033\\officialputuid\033]8;;\033\\")
-    print('🎁 \033]8;;https://paypal.me/IPJAP\033\\Paypal.me/IPJAP\033]8;;\033\\ — \033]8;;https://trakteer.id/officialputuid\033\\Trakteer.id/officialputuid\033]8;;\033\\')
-
-# Initialize the header
-print_header()
-
 ONETIME_PROXY = 100
 extension_node_version = "4.26.2"
 desktop_node_version = "4.30.0"
@@ -56,12 +42,8 @@ print()
 
 # Get User input for proxy failure handling
 def get_user_input():
-    user_input = ""
-    while user_input not in ['yes', 'no']:
-        user_input = input("🔵 Do you want to remove the proxy if there is a specific failure (yes/no)? ").strip().lower()
-        if user_input not in ['yes', 'no']:
-            print("🔴 Invalid input. Please enter 'yes' or 'no'.")
-    return user_input == 'yes'
+    user_input = "")
+    return user_input == 'no'
 
 remove_on_all_errors = get_user_input()
 print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
@@ -69,11 +51,7 @@ print(f"🔵 You selected: {'Yes' if remove_on_all_errors else 'No'}, ENJOY!\n")
 # Ask user for node type (extension or desktop)
 def get_node_type():
     node_type = ""
-    while node_type not in ['extension', 'desktop']:
-        node_type = input("🔵 Choose node type (extension/desktop): ").strip().lower()
-        if node_type not in ['extension', 'desktop']:
-            print("🔴 Invalid input. Please enter 'extension' or 'desktop'.")
-    return node_type
+    return node_type == 'desktop'
 
 node_type = get_node_type()
 print(f"🔵 You selected: {node_type.capitalize()} node. ENJOY!\n")
