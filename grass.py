@@ -60,7 +60,7 @@ def get_node_type():
             return node_type == 'desktop'
 
 node_type = get_node_type()
-print(f"🔵 You selected: {node_type.capitalize()} node. ENJOY!\n")
+print(f"🔵 You selected: {node_type} node. ENJOY!\n")
 
 def truncate_userid(user_id):
     return f"{user_id[:4]}--{user_id[-4:]}"
